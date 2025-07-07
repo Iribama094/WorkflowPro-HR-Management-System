@@ -26,7 +26,7 @@ A comprehensive, modern HR management system built with HTML, CSS, JavaScript, a
 
 ##  Live Demo
 
-Visit the live application: [WorkflowPro HR System](https://iribama094.github.io/workflowpro-hr)
+Visit the live application: [WorkflowPro HR System](https://Iribama094.github.io/workflowpro-hr)
 
 ##  Screenshots
 
