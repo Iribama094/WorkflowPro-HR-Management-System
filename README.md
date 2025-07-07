@@ -5,24 +5,24 @@ A comprehensive, modern HR management system built with HTML, CSS, JavaScript, a
 ##  Features
 
 ### Core Modules
-- ** Dashboard** - Overview with interactive charts and quick actions
-- ** Employee Management** - Complete employee lifecycle management
-- ** Attendance Tracking** - Time tracking and attendance monitoring
-- ** Payroll Processing** - Nigerian Naira-based payroll management
-- ** Performance Management** - Reviews, goals, and KPI tracking
-- ** Recruitment** - Job posting and hiring pipeline management
-- ** Training & Development** - Course management and learning tracking
-- ** Time Tracking** - Real-time timer and productivity monitoring
-- ** Reports & Analytics** - Data visualization and insights
-- ** Settings** - System configuration and integrations
+- **Dashboard** - Overview with interactive charts and quick actions
+- **Employee Management** - Complete employee lifecycle management
+- **Attendance Tracking** - Time tracking and attendance monitoring
+- **Payroll Processing** - Nigerian Naira-based payroll management
+- **Performance Management** - Reviews, goals, and KPI tracking
+- **Recruitment** - Job posting and hiring pipeline management
+- **Training & Development** - Course management and learning tracking
+- **Time Tracking** - Real-time timer and productivity monitoring
+- **Reports & Analytics** - Data visualization and insights
+- **Settings** - System configuration and integrations
 
 ### Key Highlights
-- ** Beautiful UI** - Modern gradient design with consistent theming
-- ** Responsive Design** - Works perfectly on all devices
-- ** Interactive Charts** - Powered by Chart.js for data visualization
-- ** Authentication System** - Secure login with session management
-- ** Development Notifications** - Professional "under development" alerts
-- ** Smooth Animations** - Engaging hover effects and transitions
+- **Beautiful UI** - Modern gradient design with consistent theming
+- **Responsive Design** - Works perfectly on all devices
+- **Interactive Charts** - Powered by Chart.js for data visualization
+- **Authentication System** - Secure login with session management
+- **Development Notifications** - Professional "under development" alerts
+- **Smooth Animations** - Engaging hover effects and transitions
 
 ##  Live Demo
 
