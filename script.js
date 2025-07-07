@@ -97,107 +97,43 @@ function showDevelopmentNotification(featureName) {
 // Initialize dashboard charts
 function initializeDashboardCharts() {
     // Only initialize charts if we're on the dashboard page
-    if (!document.getElementById('employeesChart')) return;
+    if (!document.getElementById('employeeDistributionChart')) return;
 
-    // Employees Chart - Line chart showing growth
-    const employeesCtx = document.getElementById('employeesChart').getContext('2d');
-    new Chart(employeesCtx, {
-        type: 'line',
-        data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-            datasets: [{
-                data: [120, 125, 130, 135, 138, 142],
-                borderColor: '#8B5CF6',
-                backgroundColor: 'rgba(139, 92, 246, 0.1)',
-                borderWidth: 2,
-                fill: true,
-                tension: 0.4,
-                pointRadius: 0,
-                pointHoverRadius: 4
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
-            scales: {
-                x: { display: false },
-                y: { display: false }
-            },
-            elements: { point: { radius: 0 } }
-        }
-    });
-
-    // Leave Requests Chart - Bar chart
-    const leaveCtx = document.getElementById('leaveChart').getContext('2d');
-    new Chart(leaveCtx, {
-        type: 'bar',
-        data: {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-            datasets: [{
-                data: [2, 1, 3, 1, 1],
-                backgroundColor: ['#EC4899', '#F97316', '#EF4444', '#F59E0B', '#10B981'],
-                borderRadius: 4,
-                borderSkipped: false
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
-            scales: {
-                x: { display: false },
-                y: { display: false }
-            }
-        }
-    });
-
-    // Recruitment Chart - Doughnut chart
-    const recruitmentCtx = document.getElementById('recruitmentChart').getContext('2d');
-    new Chart(recruitmentCtx, {
+    // Employee Distribution Chart - Doughnut chart showing department breakdown
+    const employeeDistCtx = document.getElementById('employeeDistributionChart').getContext('2d');
+    new Chart(employeeDistCtx, {
         type: 'doughnut',
         data: {
-            labels: ['Active', 'Interviews', 'Offers'],
+            labels: ['Engineering', 'Marketing', 'Sales', 'HR', 'Finance', 'Operations'],
             datasets: [{
-                data: [5, 4, 3],
-                backgroundColor: ['#10B981', '#F59E0B', '#3B82F6'],
-                borderWidth: 0
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
-            cutout: '60%'
-        }
-    });
-
-    // Payroll Chart - Area chart
-    const payrollCtx = document.getElementById('payrollChart').getContext('2d');
-    new Chart(payrollCtx, {
-        type: 'line',
-        data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-            datasets: [{
-                data: [110, 115, 118, 120, 122, 125],
-                borderColor: '#F59E0B',
-                backgroundColor: 'rgba(245, 158, 11, 0.2)',
+                data: [32, 18, 15, 12, 13, 10],
+                backgroundColor: [
+                    '#8B5CF6', // Purple
+                    '#10B981', // Green
+                    '#F59E0B', // Orange
+                    '#EF4444', // Red
+                    '#3B82F6', // Blue
+                    '#EC4899'  // Pink
+                ],
                 borderWidth: 2,
-                fill: true,
-                tension: 0.4,
-                pointRadius: 0,
-                pointHoverRadius: 4
+                borderColor: '#ffffff'
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
-            scales: {
-                x: { display: false },
-                y: { display: false }
-            },
-            elements: { point: { radius: 0 } }
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        usePointStyle: true,
+                        font: {
+                            size: 12
+                        }
+                    }
+                }
+            }
         }
     });
 }

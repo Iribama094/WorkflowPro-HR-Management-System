@@ -135,7 +135,7 @@
                 <!-- Stats Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
                     <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 card-hover transition-all duration-300">
-                        <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center justify-between">
                             <div>
                                 <p class="text-gray-500 text-sm">Total Employees</p>
                                 <h3 class="text-2xl font-bold mt-1">142</h3>
@@ -145,13 +145,10 @@
                                 <i class="fas fa-users text-white"></i>
                             </div>
                         </div>
-                        <div class="relative h-12">
-                            <canvas id="employeesChart"></canvas>
-                        </div>
                     </div>
                     
                     <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 card-hover transition-all duration-300">
-                        <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center justify-between">
                             <div>
                                 <p class="text-gray-500 text-sm">Pending Leave Requests</p>
                                 <h3 class="text-2xl font-bold mt-1">8</h3>
@@ -161,13 +158,10 @@
                                 <i class="fas fa-calendar-alt text-white"></i>
                             </div>
                         </div>
-                        <div class="relative h-12">
-                            <canvas id="leaveChart"></canvas>
-                        </div>
                     </div>
                     
                     <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 card-hover transition-all duration-300">
-                        <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center justify-between">
                             <div>
                                 <p class="text-gray-500 text-sm">Active Recruitments</p>
                                 <h3 class="text-2xl font-bold mt-1">12</h3>
@@ -177,13 +171,10 @@
                                 <i class="fas fa-briefcase text-white"></i>
                             </div>
                         </div>
-                        <div class="relative h-12">
-                            <canvas id="recruitmentChart"></canvas>
-                        </div>
                     </div>
                     
                     <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 card-hover transition-all duration-300">
-                        <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center justify-between">
                             <div>
                                 <p class="text-gray-500 text-sm">Upcoming Payroll</p>
                                 <h3 class="text-2xl font-bold mt-1">₦124,850,000</h3>
@@ -192,9 +183,6 @@
                             <div class="w-12 h-12 rounded-full gradient-warning flex items-center justify-center shadow-lg">
                                 <i class="fas fa-file-invoice-dollar text-white"></i>
                             </div>
-                        </div>
-                        <div class="relative h-12">
-                            <canvas id="payrollChart"></canvas>
                         </div>
                     </div>
                 </div>
@@ -212,13 +200,7 @@
                         </div>
                         
                         <div class="h-64">
-                            <!-- Chart placeholder - would be replaced with actual chart library in production -->
-                            <div class="w-full h-full bg-gray-50 rounded-lg flex items-center justify-center">
-                                <div class="text-center">
-                                    <i class="fas fa-chart-pie text-3xl text-gray-300 mb-2"></i>
-                                    <p class="text-gray-400">Employee distribution chart</p>
-                                </div>
-                            </div>
+                            <canvas id="employeeDistributionChart"></canvas>
                         </div>
                         
                         <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
