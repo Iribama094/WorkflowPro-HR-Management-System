@@ -2,7 +2,7 @@
 
 A comprehensive, modern HR management system built with HTML, CSS, JavaScript, and Chart.js. WorkflowPro provides a complete solution for managing employees, attendance, payroll, performance, recruitment, training, and more.
 
-## 🌟 Features
+##  Features
 
 ### Core Modules
 - ** Dashboard** - Overview with interactive charts and quick actions
@@ -26,7 +26,7 @@ A comprehensive, modern HR management system built with HTML, CSS, JavaScript, a
 
 ##  Live Demo
 
-Visit the live application: [WorkflowPro HR System](https://yourusername.github.io/workflowpro-hr)
+Visit the live application: [WorkflowPro HR System](https://iribama094.github.io/workflowpro-hr)
 
 ##  Screenshots
 
