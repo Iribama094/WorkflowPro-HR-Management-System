@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkflowPro | Settings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="auth-check.js"></script>
+</head>
+<body class="text-gray-800">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <div class="sidebar bg-white w-64 md:w-20 lg:w-64 h-full fixed flex flex-col transition-all duration-300 z-50">
+            <div class="p-4 flex items-center justify-between border-b">
+                <div class="logo flex items-center space-x-2">
+                    <div class="w-8 h-8 gradient-primary rounded-lg flex items-center justify-center shadow-lg">
+                        <i class="fas fa-users text-white text-sm"></i>
+                    </div>
+                    <span class="text-lg font-semibold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent hidden md:hidden lg:block">WorkflowPro</span>
+                </div>
+                <button id="sidebar-toggle" class="text-gray-500 hover:text-gray-700 lg:hidden">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="flex-1 overflow-y-auto py-4">
+
+                <div class="space-y-1 px-2">
+                    <a href="index.html" class="flex items-center space-x-3 px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-700">
+                        <i class="fas fa-tachometer-alt w-6 text-center"></i>
+                        <span class="hidden md:hidden lg:block">Dashboard</span>
+                    </a>
+                    <a href="employees.html" class="flex items-center space-x-3 px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-700">
+                        <i class="fas fa-user-friends w-6 text-center"></i>
+                        <span class="hidden md:hidden lg:block">Employees</span>
+                    </a>
+                    <a href="attendance.html" class="flex items-center space-x-3 px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-700">
+                        <i class="fas fa-calendar-alt w-6 text-center"></i>
+                        <span class="hidden md:hidden lg:block">Attendance</span>
+                    </a>
+                    <a href="payroll.html" class="flex items-center space-x-3 px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-700">
+                        <i class="fas fa-file-invoice-dollar w-6 text-center"></i>
+                        <span class="hidden md:hidden lg:block">Payroll</span>
+                    </a>
+                    <a href="performance.html" class="flex items-center space-x-3 px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-700">
+                        <i class="fas fa-bullseye w-6 text-center"></i>
+                        <span class="hidden md:hidden lg:block">Performance</span>
+                    </a>
+                    <a href="recruitment.html" class="flex items-center space-x-3 px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-700">
+                        <i class="fas fa-briefcase w-6 text-center"></i>
+                        <span class="hidden md:hidden lg:block">Recruitment</span>
+                    </a>
+                    <a href="training.html" class="flex items-center space-x-3 px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-700">
+                        <i class="fas fa-graduation-cap w-6 text-center"></i>
+                        <span class="hidden md:hidden lg:block">Training</span>
+                    </a>
+                    <a href="timetracking.html" class="flex items-center space-x-3 px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-700">
+                        <i class="fas fa-clock w-6 text-center"></i>
+                        <span class="hidden md:hidden lg:block">Time Tracking</span>
+                    </a>
+                    <a href="reports.html" class="flex items-center space-x-3 px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-700">
+                        <i class="fas fa-file-alt w-6 text-center"></i>
+                        <span class="hidden md:hidden lg:block">Reports</span>
+                    </a>
+                    <a href="settings.html" class="flex items-center space-x-3 px-3 py-3 rounded-lg bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 shadow-sm">
+                        <i class="fas fa-cog w-6 text-center"></i>
+                        <span class="hidden md:hidden lg:block">Settings</span>
+                    </a>
+                </div>
+
+                <div class="px-4 mt-8 hidden md:hidden lg:block">
+                    <div class="gradient-info rounded-lg p-4 shadow-lg">
+                        <h3 class="text-sm font-medium text-purple-800">Upgrade to Pro</h3>
+                        <p class="text-xs text-purple-700 mt-1">Get access to all features</p>
+                        <button class="mt-3 w-full gradient-primary text-white py-2 px-3 rounded-md text-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105">Upgrade</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 ml-64 md:ml-20 lg:ml-64 overflow-auto transition-all duration-300">
+            <!-- Top Navigation -->
+            <div class="bg-white border-b sticky top-0 z-40">
+                <div class="flex items-center justify-between px-6 py-3">
+                    <div class="flex items-center space-x-4">
+                        <h1 class="text-xl font-semibold">System Settings</h1>
+                        <div class="text-sm text-gray-500">Configuration & Preferences</div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <div class="relative">
+                            <button class="text-gray-500 hover:text-gray-700">
+                                <i class="fas fa-bell"></i>
+                                <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                            </button>
+                        </div>
+
+                        <div class="dropdown relative">
+                            <button class="flex items-center space-x-2 focus:outline-none">
+                                <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center avatar-ring">
+                                    <span class="text-blue-600 font-medium" data-user-initials>IW</span>
+                                </div>
+                                <span class="hidden md:block" data-user-name>Iribama Worlu</span>
+                                <i class="fas fa-chevron-down text-xs hidden md:block"></i>
+                            </button>
+
+                            <div class="dropdown-content absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-logout>Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Content -->
+            <div class="p-6">
+                <!-- Header Section -->
+                <div class="gradient-primary rounded-xl p-6 text-white mb-6 shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -mr-16 -mt-16"></div>
+                    <div class="absolute bottom-0 left-0 w-24 h-24 bg-white opacity-10 rounded-full -ml-12 -mb-12"></div>
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center relative z-10">
+                        <div>
+                            <h2 class="text-2xl font-bold mb-2">System Configuration</h2>
+                            <p class="opacity-90">Customize your WorkflowPro experience and system preferences</p>
+                        </div>
+                        <div class="mt-4 md:mt-0 flex space-x-3">
+                            <button class="bg-white bg-opacity-20 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-30 transition-all duration-300 transform hover:scale-105 shadow-lg" onclick="saveAllSettings()">
+                                <i class="fas fa-save mr-2"></i>Save All
+                            </button>
+                            <button class="bg-white bg-opacity-20 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-30 transition-all duration-300 transform hover:scale-105 shadow-lg" onclick="resetSettings()">
+                                <i class="fas fa-undo mr-2"></i>Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Navigation -->
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                    <!-- Settings Menu -->
+                    <div class="lg:col-span-1">
+                        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 sticky top-24">
+                            <h3 class="font-semibold mb-4 text-gray-900">Settings Categories</h3>
+                            <nav class="space-y-2" id="settingsNav">
+                                <button class="w-full flex items-center space-x-3 px-3 py-3 rounded-lg bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 shadow-sm settings-nav-item active" data-section="general">
+                                    <i class="fas fa-cog w-5 text-center"></i>
+                                    <span>General</span>
+                                </button>
+                                <button class="w-full flex items-center space-x-3 px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-700 settings-nav-item" data-section="company">
+                                    <i class="fas fa-building w-5 text-center"></i>
+                                    <span>Company</span>
+                                </button>
+                                <button class="w-full flex items-center space-x-3 px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-700 settings-nav-item" data-section="security">
+                                    <i class="fas fa-shield-alt w-5 text-center"></i>
+                                    <span>Security</span>
+                                </button>
+                                <button class="w-full flex items-center space-x-3 px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-700 settings-nav-item" data-section="notifications">
+                                    <i class="fas fa-bell w-5 text-center"></i>
+                                    <span>Notifications</span>
+                                </button>
+                                <button class="w-full flex items-center space-x-3 px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-700 settings-nav-item" data-section="integrations">
+                                    <i class="fas fa-plug w-5 text-center"></i>
+                                    <span>Integrations</span>
+                                </button>
+                                <button class="w-full flex items-center space-x-3 px-3 py-3 rounded-lg hover:bg-gray-100 text-gray-700 settings-nav-item" data-section="backup">
+                                    <i class="fas fa-database w-5 text-center"></i>
+                                    <span>Backup & Data</span>
+                                </button>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- Settings Content -->
+                    <div class="lg:col-span-3">
+                        <!-- General Settings -->
+                        <div class="settings-section active" id="general-section">
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-6">
+                                <h3 class="text-lg font-semibold mb-4 flex items-center">
+                                    <i class="fas fa-cog text-purple-500 mr-2"></i>
+                                    General Settings
+                                </h3>
+
+                                <div class="space-y-6">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">System Language</label>
+                                            <select class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                                <option>English (US)</option>
+                                                <option>English (UK)</option>
+                                                <option>French</option>
+                                                <option>Spanish</option>
+                                            </select>
+                                        </div>
+
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Timezone</label>
+                                            <select class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                                <option>Africa/Lagos (WAT)</option>
+                                                <option>UTC</option>
+                                                <option>America/New_York</option>
+                                                <option>Europe/London</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Date Format</label>
+                                            <select class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                                <option>DD/MM/YYYY</option>
+                                                <option>MM/DD/YYYY</option>
+                                                <option>YYYY-MM-DD</option>
+                                            </select>
+                                        </div>
+
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Currency</label>
+                                            <select class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                                <option>Nigerian Naira (₦)</option>
+                                                <option>US Dollar ($)</option>
+                                                <option>British Pound (£)</option>
+                                                <option>Euro (€)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label class="flex items-center">
+                                            <input type="checkbox" class="rounded border-gray-300 text-purple-600 focus:ring-purple-500" checked>
+                                            <span class="ml-2 text-sm text-gray-700">Enable dark mode</span>
+                                        </label>
+                                    </div>
+
+                                    <div>
+                                        <label class="flex items-center">
+                                            <input type="checkbox" class="rounded border-gray-300 text-purple-600 focus:ring-purple-500" checked>
+                                            <span class="ml-2 text-sm text-gray-700">Show tooltips and help text</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Company Settings -->
+                        <div class="settings-section" id="company-section">
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-6">
+                                <h3 class="text-lg font-semibold mb-4 flex items-center">
+                                    <i class="fas fa-building text-blue-500 mr-2"></i>
+                                    Company Information
+                                </h3>
+
+                                <div class="space-y-6">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
+                                            <input type="text" value="WorkflowPro Technologies Ltd" class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                        </div>
+
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Registration Number</label>
+                                            <input type="text" value="RC-1234567" class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Address</label>
+                                        <textarea rows="3" class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">Plot 123, Victoria Island, Lagos, Nigeria</textarea>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                            <input type="text" value="+234 801 234 5678" class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                        </div>
+
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                            <input type="email" value="info@workflowpro.ng" class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Company Logo</label>
+                                        <div class="flex items-center space-x-4">
+                                            <div class="w-16 h-16 rounded-lg gradient-primary flex items-center justify-center shadow-lg">
+                                                <i class="fas fa-users text-white text-xl"></i>
+                                            </div>
+                                            <button class="px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition">
+                                                <i class="fas fa-upload mr-2"></i>Upload New Logo
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Security Settings -->
+                        <div class="settings-section" id="security-section">
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-6">
+                                <h3 class="text-lg font-semibold mb-4 flex items-center">
+                                    <i class="fas fa-shield-alt text-green-500 mr-2"></i>
+                                    Security & Access Control
+                                </h3>
+
+                                <div class="space-y-6">
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-3">Password Policy</h4>
+                                        <div class="space-y-3">
+                                            <label class="flex items-center">
+                                                <input type="checkbox" class="rounded border-gray-300 text-purple-600 focus:ring-purple-500" checked>
+                                                <span class="ml-2 text-sm text-gray-700">Require minimum 8 characters</span>
+                                            </label>
+                                            <label class="flex items-center">
+                                                <input type="checkbox" class="rounded border-gray-300 text-purple-600 focus:ring-purple-500" checked>
+                                                <span class="ml-2 text-sm text-gray-700">Require uppercase and lowercase letters</span>
+                                            </label>
+                                            <label class="flex items-center">
+                                                <input type="checkbox" class="rounded border-gray-300 text-purple-600 focus:ring-purple-500">
+                                                <span class="ml-2 text-sm text-gray-700">Require special characters</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-3">Two-Factor Authentication</h4>
+                                        <div class="flex items-center justify-between p-4 bg-green-50 rounded-lg">
+                                            <div>
+                                                <p class="text-sm font-medium text-green-800">2FA is enabled</p>
+                                                <p class="text-xs text-green-600">Your account is protected with two-factor authentication</p>
+                                            </div>
+                                            <button class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm">
+                                                Configure
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-3">Session Management</h4>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">Session Timeout (minutes)</label>
+                                                <input type="number" value="30" class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">Max Login Attempts</label>
+                                                <input type="number" value="5" class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notifications Settings -->
+                        <div class="settings-section" id="notifications-section">
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-6">
+                                <h3 class="text-lg font-semibold mb-4 flex items-center">
+                                    <i class="fas fa-bell text-yellow-500 mr-2"></i>
+                                    Notification Preferences
+                                </h3>
+
+                                <div class="space-y-6">
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-3">Email Notifications</h4>
+                                        <div class="space-y-3">
+                                            <label class="flex items-center justify-between">
+                                                <span class="text-sm text-gray-700">New employee registrations</span>
+                                                <input type="checkbox" class="rounded border-gray-300 text-purple-600 focus:ring-purple-500" checked>
+                                            </label>
+                                            <label class="flex items-center justify-between">
+                                                <span class="text-sm text-gray-700">Payroll processing completed</span>
+                                                <input type="checkbox" class="rounded border-gray-300 text-purple-600 focus:ring-purple-500" checked>
+                                            </label>
+                                            <label class="flex items-center justify-between">
+                                                <span class="text-sm text-gray-700">Performance review reminders</span>
+                                                <input type="checkbox" class="rounded border-gray-300 text-purple-600 focus:ring-purple-500">
+                                            </label>
+                                            <label class="flex items-center justify-between">
+                                                <span class="text-sm text-gray-700">System maintenance alerts</span>
+                                                <input type="checkbox" class="rounded border-gray-300 text-purple-600 focus:ring-purple-500" checked>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-3">Push Notifications</h4>
+                                        <div class="space-y-3">
+                                            <label class="flex items-center justify-between">
+                                                <span class="text-sm text-gray-700">Real-time attendance updates</span>
+                                                <input type="checkbox" class="rounded border-gray-300 text-purple-600 focus:ring-purple-500" checked>
+                                            </label>
+                                            <label class="flex items-center justify-between">
+                                                <span class="text-sm text-gray-700">Task assignments</span>
+                                                <input type="checkbox" class="rounded border-gray-300 text-purple-600 focus:ring-purple-500" checked>
+                                            </label>
+                                            <label class="flex items-center justify-between">
+                                                <span class="text-sm text-gray-700">Meeting reminders</span>
+                                                <input type="checkbox" class="rounded border-gray-300 text-purple-600 focus:ring-purple-500">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Integrations Settings -->
+                        <div class="settings-section" id="integrations-section">
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-6">
+                                <h3 class="text-lg font-semibold mb-4 flex items-center">
+                                    <i class="fas fa-plug text-orange-500 mr-2"></i>
+                                    Third-Party Integrations
+                                </h3>
+
+                                <div class="space-y-6">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div class="border border-gray-200 rounded-lg p-4">
+                                            <div class="flex items-center justify-between mb-3">
+                                                <div class="flex items-center">
+                                                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                                                        <i class="fab fa-slack text-blue-600"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h4 class="font-medium">Slack</h4>
+                                                        <p class="text-xs text-gray-500">Team communication</p>
+                                                    </div>
+                                                </div>
+                                                <button class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
+                                                    Connected
+                                                </button>
+                                            </div>
+                                            <p class="text-sm text-gray-600 mb-3">Send notifications to Slack channels</p>
+                                            <button class="w-full px-3 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition text-sm">
+                                                Configure
+                                            </button>
+                                        </div>
+
+                                        <div class="border border-gray-200 rounded-lg p-4">
+                                            <div class="flex items-center justify-between mb-3">
+                                                <div class="flex items-center">
+                                                    <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                                                        <i class="fab fa-google text-green-600"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h4 class="font-medium">Google Workspace</h4>
+                                                        <p class="text-xs text-gray-500">Calendar & Email</p>
+                                                    </div>
+                                                </div>
+                                                <button class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">
+                                                    Not Connected
+                                                </button>
+                                            </div>
+                                            <p class="text-sm text-gray-600 mb-3">Sync calendar events and contacts</p>
+                                            <button class="w-full px-3 py-2 gradient-primary text-white rounded-lg hover:shadow-lg transition text-sm">
+                                                Connect
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div class="border border-gray-200 rounded-lg p-4">
+                                            <div class="flex items-center justify-between mb-3">
+                                                <div class="flex items-center">
+                                                    <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                                                        <i class="fab fa-microsoft text-purple-600"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h4 class="font-medium">Microsoft 365</h4>
+                                                        <p class="text-xs text-gray-500">Office Suite</p>
+                                                    </div>
+                                                </div>
+                                                <button class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
+                                                    Connected
+                                                </button>
+                                            </div>
+                                            <p class="text-sm text-gray-600 mb-3">Access Office documents and Teams</p>
+                                            <button class="w-full px-3 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition text-sm">
+                                                Configure
+                                            </button>
+                                        </div>
+
+                                        <div class="border border-gray-200 rounded-lg p-4">
+                                            <div class="flex items-center justify-between mb-3">
+                                                <div class="flex items-center">
+                                                    <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mr-3">
+                                                        <i class="fas fa-university text-red-600"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h4 class="font-medium">Banking API</h4>
+                                                        <p class="text-xs text-gray-500">Payroll Integration</p>
+                                                    </div>
+                                                </div>
+                                                <button class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">
+                                                    Not Connected
+                                                </button>
+                                            </div>
+                                            <p class="text-sm text-gray-600 mb-3">Direct payroll bank transfers</p>
+                                            <button class="w-full px-3 py-2 gradient-primary text-white rounded-lg hover:shadow-lg transition text-sm">
+                                                Connect
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Backup & Data Settings -->
+                        <div class="settings-section" id="backup-section">
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-6">
+                                <h3 class="text-lg font-semibold mb-4 flex items-center">
+                                    <i class="fas fa-database text-indigo-500 mr-2"></i>
+                                    Backup & Data Management
+                                </h3>
+
+                                <div class="space-y-6">
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-3">Automatic Backups</h4>
+                                        <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                                            <div class="flex items-center justify-between">
+                                                <div>
+                                                    <p class="text-sm font-medium text-green-800">Daily backups enabled</p>
+                                                    <p class="text-xs text-green-600">Last backup: Today at 2:00 AM</p>
+                                                </div>
+                                                <div class="flex space-x-2">
+                                                    <button class="px-3 py-1 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm">
+                                                        Backup Now
+                                                    </button>
+                                                    <button class="px-3 py-1 border border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition text-sm">
+                                                        Configure
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-3">Data Export</h4>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <button class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition">
+                                                <div class="flex items-center">
+                                                    <i class="fas fa-users text-blue-500 mr-3"></i>
+                                                    <span class="text-sm font-medium">Employee Data</span>
+                                                </div>
+                                                <i class="fas fa-download text-gray-400"></i>
+                                            </button>
+
+                                            <button class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition">
+                                                <div class="flex items-center">
+                                                    <i class="fas fa-money-bill text-green-500 mr-3"></i>
+                                                    <span class="text-sm font-medium">Payroll Records</span>
+                                                </div>
+                                                <i class="fas fa-download text-gray-400"></i>
+                                            </button>
+
+                                            <button class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition">
+                                                <div class="flex items-center">
+                                                    <i class="fas fa-chart-bar text-purple-500 mr-3"></i>
+                                                    <span class="text-sm font-medium">Performance Data</span>
+                                                </div>
+                                                <i class="fas fa-download text-gray-400"></i>
+                                            </button>
+
+                                            <button class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition">
+                                                <div class="flex items-center">
+                                                    <i class="fas fa-calendar text-yellow-500 mr-3"></i>
+                                                    <span class="text-sm font-medium">Attendance Logs</span>
+                                                </div>
+                                                <i class="fas fa-download text-gray-400"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-3">Data Retention</h4>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">Employee Records</label>
+                                                <select class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                                    <option>7 years</option>
+                                                    <option>5 years</option>
+                                                    <option>3 years</option>
+                                                    <option>Indefinite</option>
+                                                </select>
+                                            </div>
+
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">Audit Logs</label>
+                                                <select class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                                    <option>2 years</option>
+                                                    <option>1 year</option>
+                                                    <option>6 months</option>
+                                                    <option>3 months</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="settings.js"></script>
+</body>
+</html>
